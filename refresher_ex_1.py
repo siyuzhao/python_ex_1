@@ -108,6 +108,10 @@ L = [0, [], [1,2,3,4], [[5],[6,7]], [8,9,10]]
 print(L)
 # your code
 
+A = [L[3][0][0],L[3][1][0]]
+N = [L[0], L[2][1], L[2][2], A, L[-1][0], L[-1][2]]
+print("new list is", N)
+
 
 print("end of 1") # set breakpoint here 
 '''
@@ -159,6 +163,15 @@ print(newL) # [0, 2, 3, [5, 6], 8, 10]
 print("start of part 2") # set breakpoint here
 s = "Python is an interpreted, high-level, general-purpose programming language. Created by Guido van Rossum and first released in 1991, Python's design philosophy emphasizes code readability with its notable use of significant whitespace. Its language constructs and object-oriented approach aim to help programmers write clear, logical code for small and large-scale projects."
 # your code here
+
+sen = s.split(".")
+print("there are ", len(sen)," sentences:")
+for i in sen:
+    print(i)
+
+
+#hi chris, i have a question here: actually there are only 3 sentences in s. I checked the list "sen" I created and I found the last string is an empty one. 
+#what's the reason behind it? how can we avoid this? I would like to know your suggestions. thank you!!
 
 print("end of 2") # set breakpoint here 
 '''
@@ -213,6 +226,20 @@ for e in sentence_list:
 print("start of part 3") # set breakpoint here
 # your code here
 
+s = "Python is an interpreted, high-level, general-purpose programming language. Created by Guido van Rossum and first released in 1991, Python's design philosophy emphasizes code readability with its notable use of significant whitespace. Its language constructs and object-oriented approach aim to help programmers write clear, logical code for small and large-scale projects."
+
+words = s.split(" ")
+a = len(words)
+for k in range(a):
+    words[k] = words[k].replace(".", "")
+    words[k] = words[k].replace(",", "")
+    if (k % 2) == 0:
+        words[k] = words[k].lower()
+        print(words[k])
+    else:
+        words[k] = words[k].upper()
+        print(words[k])
+        
 
 print("end of 3") # set breakpoint here 
 '''
@@ -289,7 +316,23 @@ print("start of part 4") # set breakpoint here
 s = "A very long description" # a long string
 filler = "..."
 # your code here
-
+for x in range(5,16):
+    if 2*x + len(filler) > len(s):
+        print(x, s)
+    else:
+        new_abbr = s[0:x] + filler + s[-x:]
+        print(x, new_abbr)
+        
+def abbr(s, filler="...", total_width=15):
+    if total_width + len(filler) > len(s):
+        return s
+    else:
+        i = total_width // 2
+        k = total_width % 2
+        another_abbr = s[0:i+k] + filler + s[-i:]
+        return another_abbr
+    
+    
 
 print("end of 4") # set breakpoint here 
 '''

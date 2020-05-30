@@ -15,6 +15,9 @@ L = [0, [], [1,2,3,4], [[5],[6,7]], [8,9,10]]
 print(L)
 # your code
 
+A = [L[3][0][0],L[3][1][0]]
+N = [L[0], L[2][1], L[2][2], A, L[-1][0], L[-1][2]]
+print("new list is", N)
 
 print("end of 1") # set breakpoint here 
 '''

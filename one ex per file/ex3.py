@@ -15,7 +15,20 @@
 print("start of part 3") # set breakpoint here
 # your code here
 
+s = "Python is an interpreted, high-level, general-purpose programming language. Created by Guido van Rossum and first released in 1991, Python's design philosophy emphasizes code readability with its notable use of significant whitespace. Its language constructs and object-oriented approach aim to help programmers write clear, logical code for small and large-scale projects."
 
+words = s.split(" ")
+a = len(words)
+for k in range(a):
+    words[k] = words[k].replace(".", "")
+    words[k] = words[k].replace(",", "")
+    if (k % 2) == 0:
+        words[k] = words[k].lower()
+        print(words[k])
+    else:
+        words[k] = words[k].upper()
+        print(words[k])
+        
 print("end of 3") # set breakpoint here 
 '''
 
